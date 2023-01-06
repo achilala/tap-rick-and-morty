@@ -38,8 +38,7 @@ class RickAndMortyStream(RESTStream):
             )
             first_match = next(iter(all_matches), None)
             if first_match:
-                next_page_number = first_match.split("=")[1]
-                next_page_token = next_page_number
+                next_page_token = first_match.split("=")[1]
             else:
                 next_page_token = None
         else:
