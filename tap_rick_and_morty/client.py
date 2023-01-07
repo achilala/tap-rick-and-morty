@@ -16,7 +16,7 @@ class RickAndMortyStream(RESTStream):
     url_base = "https://rickandmortyapi.com/api"
 
     records_jsonpath = "$.results[*]"  # Or override `parse_response`.
-    next_page_token_jsonpath = "$.info['next']"  # Or override `get_next_page_token`.
+    next_page_token_jsonpath = "$.info.next"  # Or override `get_next_page_token`.
 
     @property
     def http_headers(self) -> dict:
