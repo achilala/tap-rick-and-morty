@@ -30,3 +30,6 @@ plugins:
   - name: target-duckdb
     variant: jwills
     pip_url: target-duckdb~=0.4
+    config:
+      filepath: "sandbox.duckdb"
+      default_target_schema: "rick_and_morty"
