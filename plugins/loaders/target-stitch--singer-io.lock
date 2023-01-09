@@ -1,0 +1,63 @@
+{
+  "plugin_type": "loaders",
+  "name": "target-stitch",
+  "namespace": "target_stitch",
+  "variant": "singer-io",
+  "label": "Stitch",
+  "docs": "https://hub.meltano.com/loaders/target-stitch--singer-io",
+  "repo": "https://github.com/singer-io/target-stitch",
+  "pip_url": "target-stitch",
+  "description": "Extract and Load Platform",
+  "logo_url": "https://hub.meltano.com/assets/logos/loaders/stitch.png",
+  "settings_group_validation": [
+    [
+      "client_id",
+      "small_batch_url",
+      "big_batch_url",
+      "token",
+      "batch_size_preferences"
+    ]
+  ],
+  "settings": [
+    {
+      "name": "client_id",
+      "kind": "password",
+      "label": "Client ID",
+      "description": "Your Stitch client ID."
+    },
+    {
+      "name": "turbo_boost_factor",
+      "kind": "integer",
+      "label": "Turbo Boost Factor",
+      "description": "The turbo boost factor to use. Default, 1."
+    },
+    {
+      "name": "disable_collection",
+      "kind": "boolean",
+      "label": "Disable Collection",
+      "description": "Whether to send anonymous usage data to stitchdata.com"
+    },
+    {
+      "name": "small_batch_url",
+      "label": "Small Batch Url",
+      "description": "The Stitch small batch URL to use. E.g. https://api.stitchdata.com/v2/import/batch."
+    },
+    {
+      "name": "big_batch_url",
+      "label": "Big Batch Url",
+      "description": "The Stitch big batch URL to use. E.g. https://api.stitchdata.com/v2/import/batch."
+    },
+    {
+      "name": "token",
+      "kind": "password",
+      "label": "Token",
+      "description": "Your Stitch auth token."
+    },
+    {
+      "name": "batch_size_preferences",
+      "kind": "object",
+      "label": "Batch Size Preferences",
+      "description": "The batch size preferences to use. Must contains key `full_table_streams` with arrays type value."
+    }
+  ]
+}

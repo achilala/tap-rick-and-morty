@@ -31,5 +31,12 @@ plugins:
     variant: jwills
     pip_url: target-duckdb~=0.4
     config:
-      filepath: "sandbox.duckdb"
-      default_target_schema: "rick_and_morty"
+      filepath: sandbox.duckdb
+      default_target_schema: rick_and_morty
+  - name: target-stitch
+    variant: singer-io
+    pip_url: target-stitch
+    config:
+      small_batch_url: https://api.stitchdata.com/v2/import/batch
+      big_batch_url: https://api.stitchdata.com/v2/import/batch
+      batch_size_preferences: {full_table_streams: [1000, 1000, 1000, 1000]}
